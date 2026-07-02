@@ -1,0 +1,286 @@
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primary: #6C63FF;
+    --color-background: #F5F7FA;
+    --color-foreground: #1F2937;
+    --color-success: #28A745;
+    --color-danger: #DC3545;
+    --color-card: #FFFFFF;
+    --color-hover: #5A52E0;
+    --color-border: #E5E7EB;
+    --default-font-family: "Inter", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--color-background);
+    font-family: var(--default-font-family);
+    color: var(--color-foreground);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    position: relative;
+}
+
+/* starting screen  */
+.start,
+.container,
+.quesContainer,
+.resultContainer {
+    max-width: 90%;
+    width: 550px;
+    height: fit-content;
+    text-align: center;
+    background-color: var(--color-card);
+    padding: 4rem;
+    border-radius: 2rem;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1),
+        0px -2px 2px rgba(0, 0, 0, 0.02);
+}
+
+.hide {
+    display: none;
+}
+
+.start img {
+    width: fit-content;
+    height: 250px;
+    display: block;
+    object-fit: cover;
+}
+
+.start h1 {
+    font-size: clamp(2.3rem, 5vw, 4rem);
+    font-weight: 600;
+    margin: 2rem;
+}
+
+.start p {
+    font-size: clamp(1.5rem, 2vw, 1.8rem);
+    color: #666;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.start button {
+    width: 100%;
+    background-color: var(--color-primary);
+    padding: 1rem 2rem;
+    font-size: clamp(1.5rem, 2vw, 1.8rem);
+    font-weight: 500;
+    color: var(--color-card);
+    border: none;
+    border-radius: 1rem;
+    outline: none;
+    transition: 0.3s linear;
+
+}
+
+.start button:hover {
+    background-color: var(--color-hover);
+}
+
+/* instructions page  */
+.instruction h2 {
+    color: var(--color-primary);
+    font-size: clamp(2rem, 3.5vw, 2.7rem);
+    margin-bottom: 2rem;
+}
+
+.instruction li {
+    text-align: left;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: clamp(1.5rem, 2vw, 1.8rem);
+}
+
+.instruction .buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.instruction .buttons button {
+    padding: 1rem 2rem;
+    font-size: clamp(1.5rem, 2vw, 1.8rem);
+    color: #fff;
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.instruction .buttons .Start {
+    background-color: var(--color-success);
+}
+
+.instruction .buttons .quit {
+    background-color: var(--color-danger);
+}
+
+/* Questions screen  */
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeLeft {
+    width: clamp(40%, 1vw, 60%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.timerBox {
+    width: 80%;
+    height: 5px;
+    background: #e6dcdc;
+}
+
+.timer {
+    width: 100%;
+    height: 100%;
+    background: #6C63FF;
+    animation: timer 60s linear forwards;
+}
+
+@keyframes timer {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0%;
+    }
+}
+
+.head p {
+    font-size: clamp(1.5rem, 2vw, 1.8rem);
+}
+
+.questions h3 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+.questions button{
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: clamp(1.5rem, 2vw, 1.8rem);
+    font-weight: 500;
+    border: none;
+    border-radius: 1rem;
+    outline: none;
+    margin-top: 1rem;
+    text-align: left;
+    transition: 0.3s linear;
+}
+.questions button:hover{
+    scale: 1.02;
+}
+
+.Next {
+    background-color: var(--color-primary);
+    padding: 1rem 2rem;
+    font-size: clamp(1.5rem, 2vw, 1.8rem);
+    font-weight: 500;
+    color: var(--color-card);
+    border: none;
+    border-radius: 1rem;
+    outline: none;
+    text-align: left;
+    transition: 0.3s linear;
+    cursor: pointer;
+    margin-top: 2rem;
+}
+
+.Next:hover {
+    background-color: var(--color-hover);
+}
+.questions{
+    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+}
+
+.correct{
+    background-color: var(--color-success);
+    color: white;
+}
+.false{
+    background-color: var(--color-danger);
+    color: white;
+}
+/* disabled button  */
+button:disabled {
+    opacity: 0.9;
+    cursor: not-allowed;
+}
+
+/* Result showing  */
+.resultContainer h1{
+    font-size: clamp(2.5rem,5vw,3.2rem);
+    font-weight: 600;
+    margin-bottom: clamp(1.5rem,2vw,2rem);
+    color: var(--color-foreground);
+}
+.resultContainer h3{
+     font-size: clamp(2rem,3vw,2.8rem);
+    font-weight: 600;
+    margin-bottom: clamp(1.5rem,2vw,2rem);
+    color: var(--color-primary);
+}
+.resultContainer p{
+    font-size: clamp(1.5rem,3vw,1.8rem);
+    font-weight: 400;
+    margin-bottom: clamp(1.5rem,2vw,2rem);
+    color: #666;
+}
+.restart{
+    padding: clamp(1.5rem,2vw,2rem);
+     font-size: clamp(1.5rem,3vw,1.8rem);
+    border-radius: 1rem;
+    border: none;
+    outline: none;
+    background-color: var(--color-primary);
+    color: white;
+}
+.restart:hover{
+    background-color: var(--color-hover);
+     color: white;
+}
+
+@media(max-width:650px) {
+    .start {
+        padding: 2rem;
+    }
+
+    .start img {
+        height: 180px;
+    }
+
+    .start button {
+        padding: 0.8rem 1.4rem;
+    }
+
+    .instruction .buttons button {
+        padding: 0.7rem 1.2rem;
+    }
+}

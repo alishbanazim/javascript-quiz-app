@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz app</title>
+
+    <!-- icon  -->
+    <link rel="icon" href="./iamges/icon.jpg">
+
+    <!-- css link -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- fontawesome CDN  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+        integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google font link  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jost:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- starting screen  -->
+    <div class="start">
+        <img src="./iamges/logo.png" alt="Logo image">
+        <header>
+            <h1>
+                Welcome to the Quiz App!
+            </h1>
+        </header>
+        <p>
+            Test your JavaScript knowledge with this 10-Question.
+        </p>
+        <button class="startQuiz">Start quiz</button>
+    </div>
+    <!-- instrucitons screen  -->
+    <div class="container hide">
+        <div class="instruction">
+            <h2>
+                <i class="fa-solid fa-circle-question"></i>
+                Quiz Instructions
+            </h2>
+            <ol>
+                <li>Read each question carefully before selecting an answer.</li>
+                <li>You have 1 minute to complete the quiz.</li>
+                <li>Each question has only one correct answer.</li>
+                <li>Once you select an answer, it cannot be changed.</li>
+                <li>After starting the quiz, you cannot quit until it is finished.</li>
+                <li>The quiz will end automatically when the time is over.</li>
+                <li> Click Next to move to the next question.</li>
+                <li>Your final score will be shown at the end of the quiz.</li>
+                <li>Do not refresh or close the page during the quiz.</li>
+                <li>Try your best and enjoy the quiz!</li>
+            </ol>
+            <div class="buttons">
+                <button class="Start">
+                    Start Quiz
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+                <button class="quit">
+                    Quit Quiz
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="quesContainer hide">
+
+        <div class="head">
+            <p class="queNo">Question 1 of 10</p>
+            <div class="timeLeft">
+                <!-- show time line  -->
+                <div class="timerBox">
+                    <div class="timer"></div>
+                </div>
+                <!-- show seconds  -->
+                <div class="count">60s</div>
+            </div>
+        </div>
+        <hr>
+        <div class="questions"></div>
+    </div>
+
+    <!-- showing result  -->
+     <div class="resultContainer hide"></div>
+ <script src="./questions.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>

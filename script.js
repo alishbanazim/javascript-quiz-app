@@ -114,7 +114,7 @@ function result() {
 Keep learning and maintain your amazing performance! 🌟</p>
 <button class='restart'>Restart</button>`
     }
-    else if (score === 8) {
+    else if (score >= 6) {
         resultContainer.innerHTML = `<h1>👏 Great Job!</h1>
    <h3>You scored ${score} out of 10.</h3>
    <p>

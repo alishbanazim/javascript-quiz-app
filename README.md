@@ -6,7 +6,7 @@ Users have **60 seconds** to answer **10 multiple-choice JavaScript questions**.
 
 ##  Live Demo
 
-🔗 https://60-second-quiz.netlify.app
+🔗 https://alishbanazim.github.io/javascript-quiz-app/
 
 ##  Features
 
